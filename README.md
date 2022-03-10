@@ -1,5 +1,11 @@
 # LogicGate Software Engineering Internship Challenge
 
+## Instructions
+
+Run the sort.rb file.
+
+```ruby sort.rb```
+
 ## Summary
 
 I chose to do an initial sort of the data, first sorting all of the animals by their ```"barn"``` color, rather than going straight for sorting them into their final barns. I did this so that I could find the total number of barns per color that would be needed, that way I could evenly distribute the animals. If I got to attempt this challenge again with more time I would see if I could sort the animals into their final barns on the first pass of iterating through the data. If I could reduce the number of loops it would run more efficiently and handle larger datasets better.

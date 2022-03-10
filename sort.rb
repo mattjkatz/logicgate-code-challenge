@@ -8,7 +8,7 @@ data = JSON.parse(file)
 
 begin
   livestock = data["livestock"]
-  puts JSON.pretty_generate(barn_sort(livestock))
+  puts barn_sort(livestock)
 rescue
   p "ERROR: JSON is not properly formatted."
 end
