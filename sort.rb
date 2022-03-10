@@ -5,6 +5,10 @@ require_relative "barn"
 
 file = File.read("animals.json")
 data = JSON.parse(file)
-livestock = data["livestock"]
 
-pp barn_sort(livestock)
+begin
+  livestock = data["livestock"]
+  pp barn_sort(livestock)
+rescue
+  p "ERROR: JSON is not properly formatted."
+end
