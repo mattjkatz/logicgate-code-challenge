@@ -2,16 +2,18 @@ def barn_sort(input)
   initial_color_sort = {}
   input.each do |animal|
     # create a color key for each color to sort the animals. first check if color key exists
-    barn_color_exists = false
-    if initial_color_sort.key?(animal["barn"]) == true
-      barn_color_exists = true
+    if animal.key?("animal") == true && animal.key?("barn") == true
+      barn_color_exists = false
+      if initial_color_sort.key?(animal["barn"]) == true
+        barn_color_exists = true
+      end
+      # if there is no corresponding color key yet, create it
+      if barn_color_exists == false
+        initial_color_sort[animal["barn"]] = []
+      end
+      # add animals to the array value of the corresponding color key
+      initial_color_sort[animal["barn"]] << animal["animal"]
     end
-    # if there is no corresponding color key yet, create it
-    if barn_color_exists == false
-      initial_color_sort[animal["barn"]] = []
-    end
-    # add animals to the array value of the corresponding color key
-    initial_color_sort[animal["barn"]] << animal["animal"]
   end
   
   livestock_sorted = []
