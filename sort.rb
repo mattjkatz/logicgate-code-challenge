@@ -10,5 +10,5 @@ begin
   livestock = data["livestock"]
   puts barn_sort(livestock)
 rescue
-  p "ERROR: JSON is not properly formatted."
+  pp "ERROR: JSON is not properly formatted."
 end

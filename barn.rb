@@ -1,27 +1,22 @@
 def barn_sort(unsorted_data)
   animals_sorted_by_color = {}
   unsorted_data.each do |animal|
-    # create a color key for each color to sort the animals. first check if color key exists
-    if animal.key?("animal") && animal.key?("barn")
-      barn_color_exists = false
-      if animals_sorted_by_color.key?(animal["barn"])
-        barn_color_exists = true
-      end
-      # if there is no corresponding color key yet, create it
-      if !barn_color_exists
+    if (animal.key?("animal") && animal.key?("barn"))
+      if !animals_sorted_by_color.key?("#{animal["barn"]}")
         animals_sorted_by_color[animal["barn"]] = []
       end
-      # add animals to the array value of the corresponding color key
       animals_sorted_by_color[animal["barn"]] << animal["animal"]
     end
   end
-  
   livestock_sorted = []
   # iterate through each color
   animals_sorted_by_color.each do |color|
     # create the appropriate number of barns and add them to the placeholder array placeholder_barn
     placeholder_barn = []
     number_of_barns = (color[1].length / 4.0).ceil
+    puts "#{color.class}"
+    puts "#{color}"
+    puts
     number_of_barns.times do |index|
       placeholder_barn << {"barn": "Barn_#{color[0]}_#{index + 1}", "animals": []}
     end
